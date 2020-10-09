@@ -7,15 +7,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BonusServiceTest {
-    @CsvFileSource(resources = "/data.csv")
-
-//    @ParameterizedTest
+   @ParameterizedTest
+   @CsvFileSource(resources = "/data.csv")
 //    @CsvSource(
 //            value={
 //                    "'registered user, bonus under limit',100060,true,30",
 //                    "'registered user, bonus over limit',100000060,true,500"
-}
-    )
+
     void shouldCalculate(String test, long amount, boolean registered, long expected) {
         BonusService service = new BonusService();
 
